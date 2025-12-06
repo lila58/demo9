@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" alignment="CENTER"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.LoginController"
+      style="-fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);
+             -fx-padding: 40;">
+
+    <Label text="Connexion"
+           style="-fx-font-size: 28px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+    <TextField fx:id="emailField" promptText="Email"
+               style="-fx-background-radius: 12; -fx-padding: 10;"/>
+
+    <PasswordField fx:id="motDePasseField" promptText="Mot de passe"
+                   style="-fx-background-radius: 12; -fx-padding: 10;"/>
+
+    <Label fx:id="messageLabel"
+           style="-fx-text-fill: #ffcccc; -fx-font-size: 14px;"/>
+
+    <Button text="Se connecter" onAction="#seConnecter"
+            style="
+                -fx-background-color: white;
+                -fx-text-fill: #1e3c72;
+                -fx-font-size: 16px;
+                -fx-background-radius: 15;
+                -fx-padding: 10 25;
+                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);
+            "/>
+
+    <Button text="Créer un compte" onAction="#allerInscription"
+            style="
+                -fx-font-size: 14px;
+                -fx-background-color: transparent;
+                -fx-text-fill: white;
+                -fx-underline: true;
+            "/>
+
+</VBox>

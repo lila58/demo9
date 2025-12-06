@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="niveau2.SnakeGameController"
+            style="-fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);">
+    <top>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+            <Label text="Snake Game"
+                   style="-fx-font-size: 32px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" style="-fx-padding: 20;">
+            <Canvas fx:id="canvas" width="600" height="600"
+                    style="
+                        -fx-background-color: white;
+                        -fx-border-color: white;
+                        -fx-border-width: 3;
+                        -fx-background-radius: 10;
+                        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 20, 0, 0, 8);
+                    "/>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="40" alignment="CENTER"
+              style="-fx-padding: 15;
+                     -fx-background-color: rgba(255,255,255,0.15);
+                     -fx-background-radius: 10;">
+            <Label fx:id="prenomLabel" text="Joueur"
+                   style="-fx-font-size: 16px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+            <Label fx:id="scoreLabel" text="Score : 0"
+                   style="-fx-font-size: 16px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

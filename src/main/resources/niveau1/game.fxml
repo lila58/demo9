@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootBox" alignment="CENTER" spacing="15"
+      style="-fx-background-color: #2c3e50;"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="niveau1.GameController">
+
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <!-- Barre d'infos + Bouton Pause -->
+    <HBox alignment="CENTER" spacing="40">
+        <Label fx:id="lblJoueur" text="Joueur: ..." textFill="WHITE">
+            <font><Font name="System Bold" size="18.0" /></font>
+        </Label>
+
+        <Label fx:id="lblScore" text="Score: 0" textFill="#f1c40f">
+            <font><Font name="System Bold" size="22.0" /></font>
+        </Label>
+
+        <!-- Nouveau Bouton Pause -->
+        <Button fx:id="btnPause" text="PAUSE" onAction="#handlePause"
+                style="-fx-background-color: #e67e22; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" />
+    </HBox>
+
+    <!-- Zone de dessin agrandie à 600x600 -->
+    <Canvas fx:id="gameCanvas" height="600.0" width="600.0" />
+
+    <Label text="Utilisez les flèches du clavier. Espace ou bouton pour Pause." textFill="#bdc3c7" />
+
+</VBox>

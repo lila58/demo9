@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.38" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InterfaceJoueurController">
+    <items>
+
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="900.0" style="-fx-background-color: #2c3e50;">
+            <children>
+
+                <ToolBar prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: rgba(0,0,0,0.2);">
+                    <items>
+                        <Button fx:id="menu" mnemonicParsing="false" onAction="#retourMenu" style="-fx-background-color: #ffffff; -fx-text-fill: #667eea; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" text="← Menu Principal">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </items>
+                </ToolBar>
+
+
+                <VBox alignment="CENTER" layoutX="425.0" layoutY="58.0" spacing="10.0">
+                    <children>
+                        <Label fx:id="bienvenue" style="-fx-font-weight: bold;" text="Bienvenue" textFill="WHITE">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="userName" style="-fx-font-weight: bold;" text="Joueur" textFill="WHITE">
+                            <font>
+                                <Font size="32.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+
+
+                <HBox alignment="CENTER" layoutX="65.0" layoutY="180.0" prefHeight="120.0" prefWidth="770.0" spacing="20.0">
+                    <children>
+
+                        <Pane fx:id="pane1" prefHeight="110.0" prefWidth="230.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <children>
+                                <Label layoutX="80.0" layoutY="10.0" style="-fx-font-weight: bold;" text="Niveau 1" textFill="#667eea">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <VBox layoutX="15.0" layoutY="45.0" spacing="8.0">
+                                    <children>
+                                        <Label text="Dernier Score:" textFill="#666666">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="dscore1" style="-fx-font-weight: bold;" text="0" textFill="#333333">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="130.0" layoutY="45.0" spacing="8.0">
+                                    <children>
+                                        <Label text="Meilleur Score:" textFill="#666666">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="mscore1" style="-fx-font-weight: bold;" text="0" textFill="#667eea">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+
+
+                        <Pane fx:id="pane2" prefHeight="110.0" prefWidth="230.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <children>
+                                <Label layoutX="80.0" layoutY="10.0" style="-fx-font-weight: bold;" text="Niveau 2" textFill="#667eea">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <VBox layoutX="15.0" layoutY="45.0" spacing="8.0">
+                                    <children>
+                                        <Label text="Dernier Score:" textFill="#666666">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="dscore2" style="-fx-font-weight: bold;" text="0" textFill="#333333">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="130.0" layoutY="45.0" spacing="8.0">
+                                    <children>
+                                        <Label text="Meilleur Score:" textFill="#666666">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="mscore2" style="-fx-font-weight: bold;" text="0" textFill="#667eea">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+
+
+                        <Pane fx:id="pane3" prefHeight="110.0" prefWidth="230.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                            <children>
+                                <Label layoutX="80.0" layoutY="10.0" style="-fx-font-weight: bold;" text="Niveau 3" textFill="#667eea">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <VBox layoutX="15.0" layoutY="45.0" spacing="8.0">
+                                    <children>
+                                        <Label text="Dernier Score:" textFill="#666666">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="dscore3" style="-fx-font-weight: bold;" text="0" textFill="#333333">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                                <VBox layoutX="130.0" layoutY="45.0" spacing="8.0">
+                                    <children>
+                                        <Label text="Meilleur Score:" textFill="#666666">
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="mscore3" style="-fx-font-weight: bold;" text="0" textFill="#667eea">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+
+
+        <AnchorPane fx:id="niveau" minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="900.0" style="-fx-background-color: #f5f5f5;">
+            <children>
+                <!-- Titre général -->
+                <Label layoutX="350.0" layoutY="20.0" style="-fx-font-weight: bold;" text="🏆 Classements" textFill="#333333">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+
+
+                <HBox alignment="CENTER" layoutX="40.0" layoutY="70.0" prefHeight="320.0" prefWidth="820.0" spacing="30.0">
+                    <children>
+
+                        <VBox alignment="TOP_CENTER" spacing="10.0">
+                            <children>
+                                <Label style="-fx-font-weight: bold;" text="Niveau 1" textFill="#667eea">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="classementn1" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 8, 0, 0, 3);">
+                                    <columns>
+                                        <TableColumn fx:id="j1" prefWidth="140.0" style="-fx-font-weight: bold;" text="Joueur" />
+                                        <TableColumn fx:id="s1" prefWidth="109.0" style="-fx-alignment: CENTER;" text="Score" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+
+
+                        <VBox alignment="TOP_CENTER" spacing="10.0">
+                            <children>
+                                <Label style="-fx-font-weight: bold;" text="Niveau 2" textFill="#667eea">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="classementn2" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 8, 0, 0, 3);">
+                                    <columns>
+                                        <TableColumn fx:id="j2" prefWidth="140.0" style="-fx-font-weight: bold;" text="Joueur" />
+                                        <TableColumn fx:id="s2" prefWidth="109.0" style="-fx-alignment: CENTER;" text="Score" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+
+
+                        <VBox alignment="TOP_CENTER" spacing="10.0">
+                            <children>
+                                <Label style="-fx-font-weight: bold;" text="Niveau 3" textFill="#667eea">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="classementn3" prefHeight="250.0" prefWidth="250.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.08), 8, 0, 0, 3);">
+                                    <columns>
+                                        <TableColumn fx:id="j3" prefWidth="140.0" style="-fx-font-weight: bold;" text="Joueur" />
+                                        <TableColumn fx:id="s3" prefWidth="109.0" style="-fx-alignment: CENTER;" text="Score" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+
+                <ToolBar layoutY="450.0" prefHeight="50.0" prefWidth="900.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 1 0 0 0;">
+                    <items>
+                        <Button fx:id="deconnexion" mnemonicParsing="false" onAction="#deconnexion" style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" text="🚪 Déconnexion">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </items>
+                </ToolBar>
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>
