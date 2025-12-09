@@ -1,3 +1,4 @@
+//fichier interface admin chargement de la page et ouverture de la fenetre
 package org.example.demo9;
 
 import javafx.application.Application;
