@@ -1,3 +1,4 @@
+//fichier de stockage des donnees entree 
 package model;
 
 import javafx.beans.property.*;
