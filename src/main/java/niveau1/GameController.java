@@ -1,3 +1,4 @@
+//tous ce qui est dessin du serpent mouvement les regles qui elimine le serpent pause et envoie du score final
 package niveau1;
 
 import controller.AdminController;
