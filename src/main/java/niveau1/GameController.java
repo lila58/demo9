@@ -120,8 +120,6 @@ public class GameController {
         snake.clear();
         // Départ centré
         snake.add(new Point(10, 10));
-        snake.add(new Point(9, 10));
-        snake.add(new Point(8, 10));
         spawnFood();
         score = 0;
         direction = 1;
@@ -259,15 +257,27 @@ public class GameController {
         // Fond
         gc.setFill(Color.BLACK);
         gc.fillRect(0, 0, gameCanvas.getWidth(), gameCanvas.getHeight());
-
         // Nourriture
         gc.setFill(Color.RED);
         gc.fillOval(food.x * TILE, food.y * TILE, TILE, TILE);
-
         // Serpent
-        gc.setFill(Color.LIME);
-        for (Point p : snake) {
-            gc.fillRect(p.x * TILE, p.y * TILE, TILE - 2, TILE - 2);
+        if (!snake.isEmpty()) {
+            // TÊTE DU SERPENT
+            Point head = snake.get(0);
+            gc.setFill(Color.DARKGREEN);
+            gc.fillRect(head.x * TILE, head.y * TILE, TILE, TILE);
+
+            // YEUX (adaptés pour TILE=25)
+            gc.setFill(Color.WHITE);
+            gc.fillOval(head.x * TILE + 5, head.y * TILE + 5, 4, 4);
+            gc.fillOval(head.x * TILE + 15, head.y * TILE + 5, 4, 4);
+
+            // CORPS DU SERPENT
+            gc.setFill(Color.LIMEGREEN);
+            for (int i = 1; i < snake.size(); i++) {
+                Point p = snake.get(i);
+                gc.fillRect(p.x * TILE, p.y * TILE, TILE, TILE);
+            }
         }
     }
 }

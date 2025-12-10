@@ -88,7 +88,15 @@ public class InterfaceJoueurController {
 
 
     public void deconnexion(ActionEvent actionEvent) {
+        // Redirection vers la page de connexion
+        SceneUtils.changerScene(
+                "/interface/Login.fxml",
+                (Node) actionEvent.getSource()
+        );
+
+        System.out.println("Déconnexion effectuée");
     }
+
     private joueur monJoueur;
     private int userId;
 

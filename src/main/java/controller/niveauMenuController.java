@@ -27,9 +27,6 @@ public class niveauMenuController {
     public Button compte;
 
     @FXML
-    public Button quitter;
-
-    @FXML
     private Button niveau1;
 
     @FXML

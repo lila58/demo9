@@ -103,6 +103,26 @@ public class UserDAO{
 
         return "";
     }
+    //RECUPERER LE ROLE D'UN UTILISATEUR
+    public int getRoleById(int idUser){
+        String sql = "SELECT role FROM users WHERE id = ?";
+        try(Connection conn = DBConfig.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql)){
+
+            ps.setInt(1, idUser);
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                return rs.getInt("role");
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return -1;
+    }
+
 
     //SAUVEGARDER LE SCORE
     public void sauvegarderScore(int idUser, int niveau, int score){

@@ -7,6 +7,8 @@ module org.example.demo {
     requires java.desktop;
     requires jbcrypt;
     requires javafx.graphics;
+    requires javafx.base;
+
 
 
     // Dépendances pour les bibliothèques tierces si utilisées (ex: jbcrypt)

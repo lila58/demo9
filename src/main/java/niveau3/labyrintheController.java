@@ -1,14 +1,12 @@
 package niveau3;
 
-import controller.gameOverController;
+
 import database.requestDB;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -80,7 +78,7 @@ public class labyrintheController {
     };
 
 
-    private final int level = 3;
+
     private final ArrayList<tile> snake;
     Random random;
     tile head;
@@ -91,9 +89,6 @@ public class labyrintheController {
     
     // Flag pour empêcher le retournement suicide (double changement de direction en une frame)
     private boolean directionChanged = false;
-
-    // private static final double SPEED_INCREMENT = 0.95;
-    //private static final double MIN_SPEED = 50;
     private Timeline timeline;
 
     private final int[][] maze = {
@@ -119,7 +114,7 @@ public class labyrintheController {
             {1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1}, // 19
             {1,0,1,0,1,1,0,1,1,1,0,0,0,0,1,1,1,0,1,1,0,1,0,1}, // 20
             {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 21 Couloir circulation
-            {1,0,1,1,1,0,1,1,0,1,1,1,1,1,1,0,1,1,0,1,1,1,0,1}, // 22 Obstacles espacés
+            {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 22 Obstacles espacés
             {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}  // 23
     };
 
@@ -160,13 +155,18 @@ public class labyrintheController {
         }
 
         gc.setFill(Color.RED);
-        gc.fillRect(food.x* tileSize, food.y * tileSize, tileSize, tileSize);
-
-        gc.setFill(Color.GREEN);
+        gc.fillOval(food.x* tileSize, food.y * tileSize, tileSize, tileSize);
+        //tete
+        gc.setFill(Color.DARKGREEN);
         gc.fillRect(head.x * tileSize, head.y * tileSize, tileSize, tileSize);
 
+        //YEUX
+        gc.setFill(Color.WHITE);
+        gc.fillOval(head.x * tileSize + 5, head.y * tileSize + 5, 4, 4);
+        gc.fillOval(head.x * tileSize + 15, head.y * tileSize + 5, 4, 4);
 
-        gc.setFill(Color.GREEN);
+
+        gc.setFill(Color.LIMEGREEN);
         for (tile snakePart : snake) {
             gc.fillRect(snakePart.x * tileSize, snakePart.y * tileSize, tileSize, tileSize);
         }
@@ -179,6 +179,7 @@ public class labyrintheController {
 
         labyrinthe.setFocusTraversable(true);
         labyrinthe.requestFocus();
+
 
         // CORRECTION : Attacher les contrôles quand la scène est prête
         rootPane.sceneProperty().addListener((observable, oldScene, newScene) -> {
@@ -402,7 +403,7 @@ public class labyrintheController {
        );
    }
 
-            private void updateSpeed() {
+   private void updateSpeed() {
         int length = snake.size();
 
         double progression = (double) length / MAX_SNAKE_LENGTH;
@@ -442,6 +443,7 @@ public class labyrintheController {
         );
         fadeOut.play();
     }
+
 
 
 }

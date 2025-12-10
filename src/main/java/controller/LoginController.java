@@ -32,14 +32,24 @@ public class LoginController{
 
             //Récupération du prénom pour l'afficher dans le jeu
             String prenom = userDAO.getPrenomById(idUser);
+            int role = userDAO.getRoleById(idUser);
+            if(role == 1){
+                SceneUtils.changerSceneAvecUtilisateur(
+                        "/interface/admin.fxml",
+                        emailField,
+                        idUser,
+                        prenom
+                );
+            }else {
+                //Redirection vers le jeu avec prénom
+                SceneUtils.changerSceneAvecUtilisateur(
+                        "/interface/menuNiveau.fxml",
+                        emailField,
+                        idUser,
+                        prenom
+                );
+            }
 
-            //Redirection vers le jeu avec prénom
-            SceneUtils.changerSceneAvecUtilisateur(
-                    "/interface/menuNiveau.fxml",
-                    emailField,
-                    idUser,
-                    prenom
-            );
 
         }else{
             messageLabel.setText("Email ou mot de passe incorrect");

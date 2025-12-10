@@ -2,6 +2,8 @@ package controller;
 
 import database.UserDAO;
 import database.UserDAO_Irfane;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,13 +15,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import niveau1.GameController;
+import utils.SceneUtils;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminController implements Initializable {
-
+    @FXML
+    public Button deconnexion;
     @FXML private TableView<User> tableUsers;
     @FXML private TableColumn<User, String> colNom;
     @FXML private TableColumn<User, String> colPrenom;
@@ -53,7 +57,15 @@ public class AdminController implements Initializable {
 
         refreshTable();
     }
+    public void deconnexion(ActionEvent actionEvent) {
+        // Redirection vers la page de connexion
+        SceneUtils.changerScene(
+                "/interface/Login.fxml",
+                (Node) actionEvent.getSource()
+        );
 
+        System.out.println("Déconnexion effectuée");
+    }
     private void remplirChamps(User u) {
         txtNom.setText(u.getNom());
         txtPrenom.setText(u.getPrenom());
@@ -111,10 +123,11 @@ public class AdminController implements Initializable {
             return;
         }
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/snake/game.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/niveau1/game.fxml"));
             Parent root = loader.load();
             GameController gameController = loader.getController();
             gameController.initData(selected, this);
+            gameController.setUtilisateur(selected.getId(), selected.getPrenom());
 
             Stage stage = new Stage();
             stage.setTitle("Snake - Niveau 1");
