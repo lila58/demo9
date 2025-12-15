@@ -50,14 +50,10 @@ public class SceneUtils {
     public static void changerSceneAvecUtilisateur(String fxml, Node source, int idUser, String prenom) {
         try{
             FXMLLoader loader = new FXMLLoader(SceneUtils.class.getResource(resolvePath(fxml)));
-            // ATTENTION : resolvePath ajoute "/controller/" par défaut.
-            // Si vos FXML sont dans des dossiers différents, il faut revoir resolvePath ou passer le chemin complet.
 
-            // Si 'fxml' contient déjà le chemin complet (ex: "/niveau1/game.fxml"), on ne doit pas utiliser resolvePath
             if(fxml.startsWith("/")){
                 loader = new FXMLLoader(SceneUtils.class.getResource(fxml));
             } else {
-                // Garde la compatibilité avec l'existant si vous passez juste "Game.fxml" pour le niveau 2
                 loader = new FXMLLoader(SceneUtils.class.getResource(resolvePath(fxml)));
             }
 

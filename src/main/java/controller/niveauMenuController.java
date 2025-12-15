@@ -59,18 +59,29 @@ public class niveauMenuController {
 
         public void verifierDeblocage(joueur monjoueur){
             int deblocN2=50;
+            int deblocN3=50;
 
-            int deblocN3=40;
+            // Par défaut, on désactive les niveaux
+            niveau2.setDisable(true);
+            niveau3.setDisable(true);
 
             ArrayList<score> scores = monjoueur.getScores();
-            for (score s : scores) {
-                if (s.getNiveau() == 1) {
-                    niveau2.setDisable(s.getMeilleur_score() < deblocN2);
-                } else if (s.getNiveau() == 2) {
-                    niveau3.setDisable(s.getMeilleur_score() < deblocN3);
-                }
+
+            if(scores == null || scores.isEmpty()){
+                return;
             }
 
+            for (score s : scores) {
+                if (s.getNiveau() == 1) {
+                    if (s.getMeilleur_score() >= deblocN2) {
+                        niveau2.setDisable(false);
+                    }
+                } else if (s.getNiveau() == 2) {
+                    if (s.getMeilleur_score() >= deblocN3) {
+                        niveau3.setDisable(false);
+                    }
+                }
+            }
         }
 
 
@@ -85,10 +96,10 @@ public class niveauMenuController {
                 throw new RuntimeException(e);
             }
         });
-
+        niveau1.setOnAction(this::lancerNiveau1);
         niveau3.setOnAction(this::lancerNiveau3);
         niveau2.setOnAction(this::lancerNiveau2);
-        niveau1.setOnAction(this::lancerNiveau1);
+
     }
 
     @FXML

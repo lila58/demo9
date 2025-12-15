@@ -1,4 +1,3 @@
-//designe de la zone de jeu ,label de score et le bouton pause
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>

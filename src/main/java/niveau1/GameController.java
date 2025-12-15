@@ -168,7 +168,7 @@ public class GameController {
             gc.fillText("PAUSE", 240, 300);
         }
 
-        // IMPORTANT : Redonner le focus à la boite principale pour que le clavier remarche
+        //  Redonner le focus à la boite principale pour que le clavier remarche
         // Sinon le focus reste sur le bouton et les flèches ne marchent plus.
         rootBox.requestFocus();
     }
